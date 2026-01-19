@@ -34,7 +34,7 @@ class BlogController extends Controller
     public function blogNew()
     {
         if (empty($_POST)) {
-            return $this->render('newblo .html.twig');
+            return $this->render('newblog.html.twig');
         }
 
         $validator = new Validator();
@@ -57,7 +57,7 @@ class BlogController extends Controller
                 ]
             ]);
         }
-        header('Location: /blog');
+        header('Location: /');
         exit;
     }
 }
