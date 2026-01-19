@@ -23,6 +23,11 @@ class AuthorController extends Controller
 
     public function login()
     {
+        if (!empty($_SESSION['user'])) {
+            header('Location: /');
+            exit;
+        }
+
         if (empty($_POST)) {
             return $this->render('auth/login.html.twig');
         }
@@ -70,6 +75,11 @@ class AuthorController extends Controller
 
     public function register()
     {
+        if (!empty($_SESSION['user'])) {
+            header('Location: /');
+            exit;
+        }
+
         if (empty($_POST)) {
             return $this->render('auth/register.html.twig');
         }
@@ -80,8 +90,6 @@ class AuthorController extends Controller
         $authError = 'Email déjà utilisé';
 
         if (empty($errors)) {
-
-            // Hash du mot de passe AVANT insertion
             $data = $userClass->getAllData();
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
@@ -110,5 +118,21 @@ class AuthorController extends Controller
             'data'   => $_POST,
             'errors' => $userClass->getErrors(),
         ]);
+    }
+
+    public function logout()
+    {
+        session_start();
+        $_SESSION = [];
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+        session_destroy();
+        header('Location: /login');
+        exit;
     }
 }
