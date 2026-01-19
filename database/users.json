@@ -1,0 +1,38 @@
+[
+    {
+        "_id": {"$oid": "6967db09b3f42221a2d42bc4"},
+        "name": "Patrick Dupont",
+        "email": "patrick.dupont@example.com",
+        "password": "$2y$10$Kk8qD.1vFJsN1fH8G4wF6ePOC9.lZ7t9jx/3HjZTUIl3kOv9aXH7G"
+    },
+    {
+        "_id": {"$oid": "6967db09b3f42221a2d42bc5"},
+        "name": "Alice Martin",
+        "email": "alice.martin@example.com",
+        "password": "$2y$10$Kk8qD.1vFJsN1fH8G4wF6ePOC9.lZ7t9jx/3HjZTUIl3kOv9aXH7G"
+    },
+    {
+        "_id": {"$oid": "6967db09b3f42221a2d42bc6"},
+        "name": "Jean Bernard",
+        "email": "jean.bernard@example.com",
+        "password": "$2y$10$Kk8qD.1vFJsN1fH8G4wF6ePOC9.lZ7t9jx/3HjZTUIl3kOv9aXH7G"
+    },
+    {
+        "_id": {"$oid": "696d16120943c059df0e0ec2"},
+        "name": "Test Utilisateur",
+        "email": "test@test.test",
+        "password": "$2y$10$wP8kZJp2kQ0Z9K1C6HfK6uKZPpO3d9X7RrYcFZ5mQ1Y8H3WZkP2a"
+    },
+    {
+        "_id": {"$oid": "696d1c270943c059df0e0ec3"},
+        "name": "Admin Test",
+        "email": "test.admin@test.test",
+        "password": "$2y$10$wP8kZJp2kQ0Z9K1C6HfK6uKZPpO3d9X7RrYcFZ5mQ1Y8H3WZkP2a"
+    },
+    {
+        "_id": {"$oid": "696d206c0943c059df0e0ec4"},
+        "name": "Thomas Leroy",
+        "email": "thomas.leroy@example.com",
+        "password": "$2y$10$hjQFgmkSFuLsXy9WvZPbiuRntfrOH875F.ENZ.0Whlbvbw24pFiF."
+    }
+]

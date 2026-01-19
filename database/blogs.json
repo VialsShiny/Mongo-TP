@@ -1,0 +1,58 @@
+[
+    {
+        "_id": {"$oid": "650b1c000000000000000001"},
+        "title": "Mon premier article",
+        "content": "Bienvenue sur mon blog ! Voici le contenu détaillé de mon premier article. Je vais partager des conseils, astuces et tutoriels PHP.",
+        "author": "Patrick Dupont",
+        "comments": [
+            {
+                "username": "Alice Martin",
+                "content": "Super article ! Très clair et précis."
+            },
+            {
+                "username": "Jean Bernard",
+                "content": "Merci pour le partage, ça m’a beaucoup aidé."
+            }
+        ],
+        "created_at": {"$date": "2026-01-15T10:20:00Z"}
+    },
+    {
+        "_id": {"$oid": "650b1c000000000000000002"},
+        "title": "Découverte de MongoDB",
+        "content": "Dans cet article, nous allons explorer MongoDB avec PHP et apprendre à stocker des données efficacement.",
+        "author": "Marie Curie",
+        "comments": [
+            {
+                "username": "Charles Dupuis",
+                "content": "Très instructif ! Merci beaucoup."
+            }
+        ],
+        "created_at": {"$date": "2026-01-16T12:35:00Z"}
+    },
+    {
+        "_id": {"$oid": "650b1c000000000000000003"},
+        "title": "Twig et PHP",
+        "content": "Apprendre à afficher des templates Twig avec PHP est simple et rapide. Voici un guide étape par étape.",
+        "author": "Albert Einstein",
+        "comments": [],
+        "created_at": {"$date": "2026-01-17T09:15:00Z"}
+    },
+    {
+        "_id": {"$oid": "650b1c000000000000000004"},
+        "title": "Bonnes pratiques en PHP",
+        "content": "Cet article résume les bonnes pratiques de développement en PHP : sécurité, performances et lisibilité du code.",
+        "author": "Marie Curie",
+        "comments": [
+            {"username": "Alice Martin", "content": "Très utile, merci !"}
+        ],
+        "created_at": {"$date": "2026-01-18T14:50:00Z"}
+    },
+    {
+        "_id": {"$oid": "650b1c000000000000000005"},
+        "title": "Introduction à Tailwind CSS",
+        "content": "Tailwind CSS permet de créer des interfaces rapidement et efficacement. Voici comment débuter.",
+        "author": "Patrick Dupont",
+        "comments": [],
+        "created_at": {"$date": "2026-01-18T16:30:00Z"}
+    }
+]
