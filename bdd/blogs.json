@@ -1,0 +1,74 @@
+[{
+  "_id": {
+    "$oid": "650b1c000000000000000001"
+  },
+  "title": "Mon premier article",
+  "content": "Voici le contenu détaillé de mon premier article.",
+  "author": "John Doe",
+  "comments": [
+    {
+      "username": "Alice",
+      "content": "Super article !"
+    },
+    {
+      "username": "Bob",
+      "content": "Merci pour le partage."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "650b1c000000000000000002"
+  },
+  "title": "Découverte de MongoDB",
+  "content": "Cet article explique comment utiliser MongoDB avec PHP.",
+  "author": "Marie Curie",
+  "comments": [
+    {
+      "username": "Charles",
+      "content": "Très instructif !"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "650b1c000000000000000003"
+  },
+  "title": "Twig et PHP",
+  "content": "Apprendre à afficher des templates Twig avec PHP est simple.",
+  "author": "Albert Einstein",
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "696d25d10943c059df0e0ec5"
+  },
+  "title": "Découverte de MongoDB",
+  "content": "Cet article explique comment utiliser MongoDB avec PHP.",
+  "author": "Marie Curie",
+  "created_at": {
+    "$date": "2026-01-18T18:26:25.116Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696d28e70943c059df0e0ec6"
+  },
+  "title": "testtest",
+  "content": "sdfhjfshkjfshdjkh",
+  "author": "id",
+  "created_at": {
+    "$date": "2026-01-18T18:39:35.746Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696d449f0943c059df0e0ec7"
+  },
+  "title": "testghfkhgfsjhfdjkqhsfdkjhfdskqj",
+  "content": "jjlkfdqshkjfhsqdkjhfsdljk",
+  "author": "to set",
+  "created_at": {
+    "$date": "2026-01-18T20:37:51.699Z"
+  }
+}]

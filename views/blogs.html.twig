@@ -1,0 +1,63 @@
+{% extends "./layout/layout.html.twig" %}
+
+{% block title %}Liste des articles - MonBlog{% endblock %}
+
+{% block app %}
+
+{# En-tête de la page #}
+<div class="text-center mb-12">
+  <h1 class="text-5xl font-bold text-white mb-4">
+    Tous les articles
+  </h1>
+  <p class="text-white text-opacity-90 text-lg">
+    Découvrez les dernières publications de notre communauté
+  </p>
+</div>
+
+{# Liste des articles #}
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {% for blog in blogs %}
+    <article class="glass rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+      <div class="p-6">
+        
+        {# Avatar de l'auteur #}
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white font-bold mr-3">
+            {{ (blog.author ?? 'A')|first|upper }}
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Par</p>
+            <p class="font-semibold text-gray-900">{{ blog.author ?? 'Anonyme' }}</p>
+          </div>
+        </div>
+
+        {# Titre de l'article #}
+        <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors line-clamp-2">
+          {{ blog.title }}
+        </h2>
+
+        {# Lien vers l'article #}
+        <a href="/blog/{{ blog._id }}" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium transition-colors mt-4">
+          Lire l'article
+          <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+  {% else %}
+    {# Message si aucun article #}
+    <div class="col-span-full glass rounded-2xl shadow-xl p-12 text-center">
+      <svg class="w-24 h-24 mx-auto mb-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+      </svg>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">Aucun article pour le moment</h2>
+      <p class="text-gray-600 mb-6">Soyez le premier à publier un article sur ce blog !</p>
+      <a href="/blognew" class="inline-block px-6 py-3 text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:shadow-lg transition-all font-medium">
+        Créer un article
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Mon Blog{% endblock %}</title>
+  <link rel="shortcut icon" href="{% block favicon %}/public/img/favicon.ico{% endblock %}" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @keyframes gradient-flow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .animated-gradient {
+      background: linear-gradient(-45deg, #35259b, #be3c7d, #5bbfe0, #6809c0);
+      background-size: 400% 400%;
+      animation: gradient-flow 15s ease infinite;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen animated-gradient flex flex-col justify-between">
+  
+  {# Navigation #}
+  <nav class="glass shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+
+        {# Logo/Titre #}
+        <div class="flex-shrink-0">
+          <a href="/" class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            MonBlog
+          </a>
+        </div>
+
+        {# Menu principal #}
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="/" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            Accueil
+          </a>
+
+          {% if session.user is defined %}
+            <a href="/blognew" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+              Créer un article
+            </a>
+          {% endif %}
+        </div>
+
+        {# Auth buttons #}
+        <div class="flex items-center space-x-3">
+
+          {% if session.user is defined %}
+            <span class="text-sm text-gray-600">
+              Bonjour <strong>{{ session.user.email }}</strong>
+            </span>
+
+            <a href="/logout"
+              class="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition">
+              Déconnexion
+            </a>
+          {% else %}
+            <a href="/login"
+              class="px-4 py-2 text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors">
+              Connexion
+            </a>
+
+            <a href="/register"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:shadow-lg transition-all">
+              Inscription
+            </a>
+          {% endif %}
+        </div>
+
+        {# Menu mobile #}
+        <div class="md:hidden">
+          <button class="text-gray-700 hover:text-purple-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  {# Contenu principal #}
+  <main class="md:max-w-4xl lg:max-w-6xl w-full mx-auto px-4 py-8">
+    {% block app %}
+    {% endblock %}
+  </main>
+
+  {# Footer #}
+  <footer class="glass mt-16 border-t">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-gray-600 text-sm">
+      <p>&copy; {{ "now"|date("Y") }} MonBlog. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
