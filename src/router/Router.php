@@ -8,6 +8,7 @@ class Router
         '/blog/{id}' => "BlogController@show",
         '/login' => "AuthorController@login",
         '/register' => "AuthorController@register",
+        '/logout' => "AuthorController@logout",
         '/blognew' => "BlogController@blogNew"
     ];
 
